@@ -39,7 +39,7 @@
   - ...
 
 ### 3. Storing
-- [**PostgreSQL.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/PostgreSQL.ipynb) - в этом ноутбуке реализован класс Postgre() позволяющий взаимодействовать с базой данных из Jupyter ноутбука. Помимо этого сдесь собраны базовые примеры запросов.
+- [**PostgreSQL.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/PostgreSQL.ipynb) - в этом ноутбуке средствами пакета psycopg2-binary реализован класс Postgre() позволяющий взаимодействовать с базой данных из Jupyter ноутбука. Помимо этого сдесь собраны базовые примеры запросов.
 
 
 - [**Archives.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Files.ipynb) - здесь собраны python-пакеты для работы с .7z и .zip архивами (py7zr, zipfile, shutil)
