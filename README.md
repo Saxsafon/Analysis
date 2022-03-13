@@ -14,21 +14,21 @@
   - Как установить Jupyter и другие пакеты?
   - Как запустить Jupyter, в том числе через ярлык на рабочем столе?
 
-- **Jupyter_IPython.ipynb** - здесь рассматриваются возможности оболочки IPython
+- [**Jupyter_IPython.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/0_Jupyter/Jupyter_IPython.ipynb) - здесь рассматриваются возможности оболочки IPython
   - Магические команды (как импортировать ноутбук?)
   - Доступ к документации
   - Автозаполнение
 
-- **external_code_example.ipynb** - код в этом ноудбуке используется в файле Jupyter_IPython.ipynb
+- [**external_code_example.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/0_Jupyter/external_code_example.ipynb) - код в этом ноудбуке используется в файле Jupyter_IPython.ipynb
 
-- **Jupyter_settings** - ноутбук содержит конструкции, позволяющие настроить ноутбук для более удобной работы. 
+- [**Jupyter_settings**](https://github.com/Saxsafon/Analysis/blob/master/0_Jupyter/Jupyter_settings.ipynb) - ноутбук содержит конструкции, позволяющие настроить ноутбук для более удобной работы. 
   - Как изменить количество символов, выводимых в ячейках датафреймов?
   - Как изменить ширину ячеек ноутбука?
   - Как скрыть предупреждения?
 
 - **shortcuts.ipynb** - здесь собран список удобных горячих клавиш
 
-- **Jupyter_lifehacks.ipynb** - здесь содержатся дополнительные лайфхаки и практики, полезные при работе в ноутбуках
+- [**Jupyter_lifehacks.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/0_Jupyter/Jupyter_lifehacks.ipynb) - здесь содержатся дополнительные лайфхаки и практики, полезные при работе в ноутбуках
   - Как вывести датафреймы рядом друг с другом?
   - Как сохранить ноутбук изнутри ячейки?
 
@@ -41,18 +41,18 @@
   - ...
 
 ### 3. Storing
-- **Archives.ipynb** - здесь собраны python-пакеты для работы с .7z и .zip архивами (py7zr, zipfile, shutil)
+- [**Archives.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Files.ipynb) - здесь собраны python-пакеты для работы с .7z и .zip архивами (py7zr, zipfile, shutil)
   - Как распаковать архивы различных форматов?
   - Как упоковать один или несколько файлов в архив?
 
-- **Files.ipynb** - файл содержит несколько функций, с помощью которых можно считать содержимое нескольких файлов
+- [**Files.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Files.ipynb) - файл содержит несколько функций, с помощью которых можно считать содержимое нескольких файлов
 
-- [**Formats.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/formats.ipynb) - здесь перечислены различные форматы для хранения данных, продемонстрированы их преимущества и недостатки
+- [**Formats.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Formats.ipynb) - здесь перечислены различные форматы для хранения данных, продемонстрированы их преимущества и недостатки
   - .xlsx - удобный для просмотра глазами, но объемный и долго считывается
   - .csv - распространенный формат, который можно очень хорошо сжать архиватором. Но в обычном состоянии объемный и тоже долго считывается.
   - .feather - не открывается. Зато занимает мало места и очень быстро считывается.
 
-- **Pickle.ipynb** - содержит примеры сохранения объектов python в .pkl-файлах с помощью пакета Pickle
+- [**Pickle.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Pickle.ipynb) - содержит примеры сохранения объектов python в .pkl-файлах с помощью пакета Pickle
 
 ### 4. Processing
 - **Groupby.ipynb** - в ноутбуке собраны полезные практики использования метода .groupby() 
@@ -64,13 +64,13 @@
 
 - **Pivot_tables.ipynb** - здесь собраны практики использования метода .pivot_table() (ОЧЕНЬ полезная штука)
 
-- **Manipulation.ipynb** - методы и практики для работы с данными 
+- [**Manipulation.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/II_Processing/Manipulation.ipynb) - методы и практики для работы с данными 
   - value_counts() - количественное и процентное соотношение + бины, в том числе и кастомные
   - Маски, их сохранение и комбинирование
   - Векторизованные операции над строками
   - ReGex и методы, использующие регулярные выражения
 
-- **Datetime.ipynb** - ноутбук содержит практики работы с пакетом datetime
+- [**Datetime.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/II_Processing/Datetime.ipynb) - ноутбук содержит практики работы с пакетом datetime
   - Объекты date, time и datetime
   - Перевод datetime-объектов в строки и наоборот
   - Объекты timestamp и timedelta
