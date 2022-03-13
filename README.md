@@ -39,6 +39,9 @@
   - ...
 
 ### 3. Storing
+- [**PostgreSQL.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/PostgreSQL.ipynb) - в этом ноутбуке реализован класс Postgre() позволяющий взаимодействовать с базой данных из Jupyter ноутбука. Помимо этого сдесь собраны базовые примеры запросов.
+
+
 - [**Archives.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Files.ipynb) - здесь собраны python-пакеты для работы с .7z и .zip архивами (py7zr, zipfile, shutil)
   - Как распаковать архивы различных форматов?
   - Как упоковать один или несколько файлов в архив?
@@ -49,8 +52,6 @@
   - .xlsx - удобный для просмотра глазами, но объемный и долго считывается
   - .csv - распространенный формат, который можно очень хорошо сжать архиватором. Но в обычном состоянии объемный и тоже долго считывается.
   - .feather - не открывается. Зато занимает мало места и очень быстро считывается.
-
-- [PostgreSQL.ipynb](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/PostgreSQL.ipynb) - в этом ноутбуке реализован класс Postgre() позволяющий взаимодействовать с базой данных из Jupyter ноутбука. Помимо этого сдесь собраны базовые примеры запросов.
 
 - [**Pickle.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Pickle.ipynb) - содержит примеры сохранения объектов python в .pkl-файлах с помощью пакета Pickle
 
