@@ -19,7 +19,7 @@
   - Доступ к документации
   - Автозаполнение
 
-- [**external_code_example.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/0_Jupyter/external_code_example.ipynb) - код в этом ноудбуке используется в файле Jupyter_IPython.ipynb
+- [**external_code_example.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/0_Jupyter/external_code_example.ipynb) - код в этом ноудбуке импортируется в файл Jupyter_IPython.ipynb
 
 - [**Jupyter_settings**](https://github.com/Saxsafon/Analysis/blob/master/0_Jupyter/Jupyter_settings.ipynb) - ноутбук содержит конструкции, позволяющие настроить ноутбук для более удобной работы. 
   - Как изменить количество символов, выводимых в ячейках датафреймов?
@@ -49,6 +49,8 @@
   - .xlsx - удобный для просмотра глазами, но объемный и долго считывается
   - .csv - распространенный формат, который можно очень хорошо сжать архиватором. Но в обычном состоянии объемный и тоже долго считывается.
   - .feather - не открывается. Зато занимает мало места и очень быстро считывается.
+
+- [PostgreSQL.ipynb](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/PostgreSQL.ipynb) - в этом ноутбуке реализован класс Postgre() позволяющий взаимодействовать с базой данных из Jupyter ноутбука. Помимо этого сдесь собраны базовые примеры запросов.
 
 - [**Pickle.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Pickle.ipynb) - содержит примеры сохранения объектов python в .pkl-файлах с помощью пакета Pickle
 
