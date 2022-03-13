@@ -26,8 +26,6 @@
   - Как изменить ширину ячеек ноутбука?
   - Как скрыть предупреждения?
 
-- **shortcuts.ipynb** - здесь собран список удобных горячих клавиш
-
 - [**Jupyter_lifehacks.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/0_Jupyter/Jupyter_lifehacks.ipynb) - здесь содержатся дополнительные лайфхаки и практики, полезные при работе в ноутбуках
   - Как вывести датафреймы рядом друг с другом?
   - Как сохранить ноутбук изнутри ячейки?
@@ -55,14 +53,14 @@
 - [**Pickle.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Pickle.ipynb) - содержит примеры сохранения объектов python в .pkl-файлах с помощью пакета Pickle
 
 ### 4. Processing
-- **Groupby.ipynb** - в ноутбуке собраны полезные практики использования метода .groupby() 
+- [**Groupby.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/II_Processing/Groupby.ipynb) - в ноутбуке собраны полезные практики использования метода .groupby() 
   - .groupby() + .apply()
   - .groupby() + .agg()
   - .groupby() + .filter()
   - .groupby() + .transform()
   - Как посчитать и вывести сумму элементов на каждом уровне группировки?
 
-- **Pivot_tables.ipynb** - здесь собраны практики использования метода .pivot_table() (ОЧЕНЬ полезная штука)
+- [**Pivot_tables.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/II_Processing/Pivot_tables.ipynb) - здесь собраны практики использования метода .pivot_table() (ОЧЕНЬ полезная штука)
 
 - [**Manipulation.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/II_Processing/Manipulation.ipynb) - методы и практики для работы с данными 
   - value_counts() - количественное и процентное соотношение + бины, в том числе и кастомные
@@ -77,35 +75,35 @@
   - Как быстро посчитать количество секунд между записями в таблице?
   - Как посчитать количество записей за временной период? _(здесь используются pivot_table)_
 
-- **Generation.ipynb** - при разработке обрабатывающих pipeline-ов, бывает полезно сгенерить тестовые данные. В этом ноудбуке собраны практики и примеры генерации данных различного вижа
+- [**Generation.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/II_Processing/Generation.ipynb) - при разработке обрабатывающих pipeline-ов, бывает полезно сгенерить тестовые данные. В этом ноудбуке собраны практики и примеры генерации данных различного вижа
   - Пакет random, а также numpy-рандомайзер
   - Как сгенерить данные с внутренними зависимостями _(пока в разработке)_
 
-- **Lifehacks.ipynb** - здесь хранятся дополнительные небольшие лайфхаки. А также практики требующие разбора.
+- [**Lifehacks.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/II_Processing/Lifehacks.ipynb) - здесь хранятся дополнительные небольшие лайфхаки. А также практики требующие разбора.
   - Как добавить несколько колонок с помощью одной функции?
   - Как заменить или сбросить header датафрейма?
   - Как вывести датафрейм в виде строки, чтобы его было удобно читать?
 ### 5. Visualization
-- **Matplotlib.ipynb** - приемы построения графиков средствами пакета matplotlib
+- [**Matplotlib.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/III_Visualizing/Matplotlib.ipynb) - приемы построения графиков средствами пакета matplotlib
   - Встроенные методы Pandas - самый быстрый способ визуализировать данные 
 
-- **Plotly.ipynb** - приемы построения различных графиков средствами пакета plotly
+- [**Plotly.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/III_Visualizing/Plotly.ipynb) - приемы построения различных графиков средствами пакета plotly
   - Столбчатый (в том числе горизонтальный), линейный, круговой графики
   - Управление подписями к графикам
   - Скользящее среднее
   - Визуализация деревьев _(пока в разработке)_
 
-- **Table.ipynb** - здесь подробно разобраны возможности стилизации датафреммов с помощью атрибута .style. А также работа с объектами Styler
+- [**Table.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/III_Visualizing/Tables.ipynb) - здесь подробно разобраны возможности стилизации датафреммов с помощью атрибута .style. А также работа с объектами Styler
   - Как выделить границы датафрейма?
   - Как добавить несеколько heatmap-градиентов в одну таблицу?
 
 ### 6. AutoExcel - пакет OpenPyxl используется для настройки файлов excel с помощью Python. С его помощью можно представлять результаты анализа в виде красивых автоматических excel-отчетов.
- - **Openpyxl_offloading.ipynb** - в этом ноутбуке собраны практики выгрузки датафреймов файл excel. А также дополнительной настройки этих файлов.
+ - [**Openpyxl_offloading.ipynb**](https://github.com/Saxsafon/Analysis/tree/master/III_AutoExcel) - в этом ноутбуке собраны практики выгрузки датафреймов файл excel. А также дополнительной настройки этих файлов.
   - Как автоматически масштабировать ширину колонок, в соответствии с их содержанием?
   - Как выгрузить данные с многоуровневой шапкой таблицы?
   - Как добавить фильтры в excel-файлы?
   - Как сгруппировать строки или колонки в excel-файлах? 
 
 ### 7. Presentation
-- **Presentation Builder.pptx** - в этом файле собрана коллекция фигур и изображений, с помощью которыз можно легко и быстро собрать схему или макет идеи.
+- [**Presentation Builder.pptx**](https://github.com/Saxsafon/Analysis/blob/master/III_Presentation/Presentation%20Builder.pptx) - в этом файле собрана коллекция фигур и изображений, с помощью которыз можно легко и быстро собрать схему или макет идеи.
 
