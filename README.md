@@ -21,7 +21,7 @@
 
 - [**external_code_example.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/0_Jupyter/external_code_example.ipynb) - код в этом ноудбуке импортируется в файл Jupyter_IPython.ipynb
 
-- [**Jupyter_settings**](https://github.com/Saxsafon/Analysis/blob/master/0_Jupyter/Jupyter_settings.ipynb) - ноутбук содержит конструкции, позволяющие настроить ноутбук для более удобной работы. 
+- [**Jupyter_settings**](https://github.com/Saxsafon/Analysis/blob/master/0_Jupyter/Jupyter_settings.ipynb) - содержит конструкции, позволяющие настроить ноутбук для более удобной работы. 
   - Как изменить количество символов, выводимых в ячейках датафреймов?
   - Как изменить ширину ячеек ноутбука?
   - Как скрыть предупреждения?
