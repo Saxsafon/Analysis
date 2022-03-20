@@ -50,7 +50,7 @@
   - Как распаковать архивы различных форматов?
   - Как упоковать один или несколько файлов в архив?
 
-- [**Files.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Files.ipynb) - файл содержит несколько функций, с помощью которых можно считать содержимое нескольких файлов
+- [**Files.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Files.ipynb) - файл содержит несколько функций, с помощью которых можно считать содержимое сразу нескольких файлов
 
 - [**Formats.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/I_Storing/Formats.ipynb) - здесь перечислены различные форматы для хранения данных, продемонстрированы их преимущества и недостатки
   - .xlsx - удобный для просмотра глазами, но объемный и долго считывается
