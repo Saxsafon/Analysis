@@ -84,9 +84,23 @@ HAVING
 
 ## DATE and DATETIME, EXTRACT
 
-DATE()
+DATE(timestamp)
 EXTRACT(DATE from datetime) -- YEAR, MONTH, WEEK, DATE, DAYOFWEEK
 TIMESTAMP_DIFF(date1, date2, SECOND)
+
+TO_CHAR(timestamp, 'YYYY-MM-DD HH24:MI:SS')
+
+### Example
+
+sql = """
+SELECT
+    *
+FROM
+    table
+WHERE
+    timestamp::DATE = '2022-07-04'
+LIMIT 5
+"""
 
 ## JOIN
 
@@ -220,7 +234,21 @@ SPACE() - возвращает строку, которая содержит о�
 
 # Операции с множествами
 
+## UNION
 
+SELECT * FROM table_1
+UNION
+SELECT * FROM table_2
+
+## UNION ALL
+
+SELECT * FROM table_1
+UNION ALL
+SELECT * FROM table_2
+
+## INTERSECT
+
+## MINUS
 
 
 
