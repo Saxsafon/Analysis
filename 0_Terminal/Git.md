@@ -1,11 +1,11 @@
 # Ресурсы
-[https://igorsmolin.ru/2020/03/23/%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%BA%D0%BE%D0%BC%D0%BC%D0%B8%D1%82%D0%B0%D0%BC%D0%B8-%D0%B2-git/](Работа с коммитами)
-[https://habr.com/ru/company/skillbox/blog/442260/](Хабр: 10 Git-комманд, которые стоит знать разработчику)
-[https://habr.com/ru/post/342116/](Хабр: Git на практике)
+[Работа с коммитами](https://igorsmolin.ru/2020/03/23/%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%BA%D0%BE%D0%BC%D0%BC%D0%B8%D1%82%D0%B0%D0%BC%D0%B8-%D0%B2-git/)
+[Хабр: 10 Git-комманд, которые стоит знать разработчику](https://habr.com/ru/company/skillbox/blog/442260/)
+[Хабр: Git на практике](https://habr.com/ru/post/342116/)
 
-[https://proglib.io/p/vetvlenie-git-s-primerami-iz-realnoy-zhizni-2020-01-25](Ветвление с примерами из реальной жизни)
+[Ветвление с примерами из реальной жизни](https://proglib.io/p/vetvlenie-git-s-primerami-iz-realnoy-zhizni-2020-01-25)
 
-[https://www.atlassian.com/ru/git/tutorials/using-branches/merge-conflicts](Bitbucket: Конфликты слияния в Git)
+[Bitbucket: Конфликты слияния в Git](https://www.atlassian.com/ru/git/tutorials/using-branches/merge-conflicts)
 
 
 # Команды
