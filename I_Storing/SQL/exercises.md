@@ -1,42 +1,3 @@
-
-# Hard
-
-## Monthly Percentage Difference
-
-### Link
-https://platform.stratascratch.com/coding/10319-monthly-percentage-difference?code_type=2
-
-### Description
-
-Given a table of purchases by date, calculate the month-over-month percentage change in revenue. 
-
-The output should include the year-month date (YYYY-MM) and percentage change, rounded to the 2nd decimal point, and sorted from the beginning of the year to the end of the year.
-
-The percentage change column will be populated from the 2nd month forward and can be calculated as ((this month's revenue - last month's revenue) / last month's revenue)*100.
-
-
-### Solution
-
-#### PostgreSQL
-
-SELECT 
-    to_char(created_at::date, 'YYYY-MM') as year_month,
-    round((sum(value) - lag(sum(value),1) over (w)) / lag(sum(value),1) over (w)*100, 2) as revenue_diff
-FROM 
-    sf_transactions
-GROUP BY 
-    year_month
-WINDOW w as (order by to_char(created_at::date, 'YYYY-MM'))
-
-#### Pandas
-
-import pandas as pd
-
-sf_transactions.head()
-res = sf_transactions.set_index('created_at')['value'].resample('M').sum().pct_change()*100
-res.round(2).to_period().reset_index()
-
-
 # Medium
 
 ## Workers With The Highest Salaries
@@ -49,16 +10,43 @@ Find the titles of workers that earn the highest salary.
 Output the highest-paid title or multiple titles that share the highest salary.
 
 ### Solution
+Иногда необходимо выделить записи с определенной числовой характеристикой (с минимальным, максимальным и прочим значением):
+Во всех способах вначале мы формируем общую таблицу, чтобы затем выделить из нее нужные записи. 
 
 #### PostgreSQL
 
-SELECT
-    worker_title as title
-FROM 
-    worker left join title on 
-        worker_id = worker_ref_id
-WHERE 
-    salary=(SELECT MAX(salary) FROM worker)
+В sql это можно сделать тремя способами:
+
+1. Через подзапрос получить требуемое числовое значение, а затем отфильтровать по нему записи
+
+'''sql
+select
+      t.worker_title as title
+from 
+    worker w left join title t on 
+        w.worker_id = t.worker_ref_id
+where
+    w.salary = (select max(salary) from worker)
+'''
+
+2. CTE + Проставить числовые ранги с помощью оконной функции и отфильтровать записи по конкретному рангу.
+
+'''sql
+
+with 
+ranked_table as (
+    select
+          t.worker_title as title
+        , w.salary
+        , dense_rank() over (order by w.salary desc) as salary_rank
+    from 
+        worker w left join title t
+            on w.worker_id = t.worker_ref_id
+)
+select title from ranked_table where salary_rank = 1
+
+'''
+
 
 #### Pandas
 
@@ -88,6 +76,7 @@ Output the user_id and their average session time.
 ### Solution
 
 #### PostgreSQL
+'''sql
 
 WITH 
 exit as (
@@ -116,16 +105,18 @@ load as (
         1,2
 )
 
+
 SELECT
     exit.user_id, 
     avg(exit-load)
 FROM
-    exit left join load 
-        on 
-            exit.user_id = load.user_id
-            and 
-            exit.day = load.day
+    exit left join load on 
+        exit.user_id = load.user_id
+        and 
+        exit.day = load.day
 GROUP BY 1
+
+'''
 
 #### Pandas
 
@@ -691,3 +682,73 @@ where
 
 
 #### Pandas
+
+
+
+# Hard
+
+## Monthly Percentage Difference
+
+### Link
+https://platform.stratascratch.com/coding/10319-monthly-percentage-difference?code_type=2
+
+### Description
+
+Given a table of purchases by date, calculate the month-over-month percentage change in revenue. 
+
+The output should include the year-month date (YYYY-MM) and percentage change, rounded to the 2nd decimal point, and sorted from the beginning of the year to the end of the year.
+
+The percentage change column will be populated from the 2nd month forward and can be calculated as ((this month's revenue - last month's revenue) / last month's revenue)*100.
+
+
+### Solution
+
+#### PostgreSQL
+
+'''sql
+SELECT
+    TO_CHAR(created_at::date, 'YYYY-MM') as year_month,
+    ROUND((SUM(value) - LAG(SUM(value), 1) OVER ())*100/LAG(SUM(value), 1) OVER (), 2) AS revenue_diff
+    
+FROM
+    sf_transactions
+GROUP BY year_month
+ORDER BY 
+    year_month
+    
+'''
+
+'''sql
+SELECT 
+    to_char(created_at::date, 'YYYY-MM') as year_month,
+    round((sum(value) - lag(sum(value),1) over (w)) / lag(sum(value),1) over (w)*100, 2) as revenue_diff
+FROM 
+    sf_transactions
+GROUP BY 
+    year_month
+WINDOW w as (order by to_char(created_at::date, 'YYYY-MM'))
+'''
+
+#### Pandas
+
+import pandas as pd
+
+sf_transactions.head()
+res = sf_transactions.set_index('created_at')['value'].resample('M').sum().pct_change()*100
+res.round(2).to_period().reset_index()
+
+## 
+
+### Link
+
+### Description
+
+
+### Solution
+
+#### PostgreSQL
+
+#### Pandas
+
+
+
