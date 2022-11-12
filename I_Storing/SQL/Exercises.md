@@ -19,7 +19,7 @@ Output the highest-paid title or multiple titles that share the highest salary.
 
 1. Через подзапрос получить требуемое числовое значение, а затем отфильтровать по нему записи
 
-'''sql
+```sql
 select
       t.worker_title as title
 from 
@@ -27,11 +27,11 @@ from
         w.worker_id = t.worker_ref_id
 where
     w.salary = (select max(salary) from worker)
-'''
+```
 
 2. CTE + Проставить числовые ранги с помощью оконной функции и отфильтровать записи по конкретному рангу.
 
-'''sql
+```sql
 
 with 
 ranked_table as (
@@ -45,17 +45,17 @@ ranked_table as (
 )
 select title from ranked_table where salary_rank = 1
 
-'''
+```
 
 
 #### Pandas
 
+```python
 import pandas as pd
 
 worker.head()
-
 worker[worker.salary == worker.salary.max()].merge(title, how = 'inner', left_on = 'worker_id', right_on = 'worker_ref_id')[['worker_title']]
-
+```
 
 
 ## Users By Average Session Time
@@ -76,7 +76,7 @@ Output the user_id and their average session time.
 ### Solution
 
 #### PostgreSQL
-'''sql
+```sql
 
 WITH 
 exit as (
@@ -116,10 +116,11 @@ FROM
         exit.day = load.day
 GROUP BY 1
 
-'''
+```
 
 #### Pandas
 
+```python
 import pandas as pd
 import numpy as np
 
@@ -135,13 +136,13 @@ df2 = df2.groupby(['user_id','day'], as_index = False).min()
 dfm = pd.merge(df1,df2,how = 'inner', on=['user_id','day'])
 dfm['diff'] = dfm['timestamp_y'] - dfm['timestamp_x']
 dfm.groupby('user_id',as_index = False).apply(np.mean)
-
+```
 
 
 ## Finding User Purchases
 
 ### Link
-    https://platform.stratascratch.com/coding/10322-finding-user-purchases?code_type=1
+https://platform.stratascratch.com/coding/10322-finding-user-purchases?code_type=1
 
 ### Description
 Write a query that'll identify returning active users. A returning active user is a user that has made a second purchase within 7 days of any other of their purchases. Output a list of user_ids of these returning active users.
@@ -151,6 +152,8 @@ Write a query that'll identify returning active users. A returning active user i
 Сила декартового произведения. Зачем учитывать порядок записей если можно посмотреть все их комбинации и отсеять те что идут не в хронологическом порядке - ведь их разность будет отрицательная!. 
 
 #### PostgreSQL
+
+```sql
 SELECT 
     DISTINCT(a.user_id) 
 FROM amazon_transactions a
@@ -158,6 +161,7 @@ JOIN amazon_transactions b
     ON a.user_id = b.user_id
 WHERE a.created_at - b.created_at BETWEEN 0 AND 7
     AND a.id != b.id
+```
 
 #### Pandas
 
@@ -165,7 +169,7 @@ WHERE a.created_at - b.created_at BETWEEN 0 AND 7
 ## Classify Business Type
 
 ### Link
-    https://platform.stratascratch.com/coding/9726-classify-business-type?code_type=1
+https://platform.stratascratch.com/coding/9726-classify-business-type?code_type=1
 
 
 ### Description
@@ -178,6 +182,8 @@ Classify each business as either a restaurant, cafe, school, or other. A restaur
 Хороший пример для практики case when then end.
 
 #### PostgreSQL
+
+```sql
 select distinct
     business_name,
     (
@@ -191,9 +197,7 @@ select distinct
     ) as business_type
 from 
     sf_restaurant_health_violations
-
-
-#### Pandas
+```
 
 ## Premium vs Freemium
 
@@ -202,10 +206,13 @@ from
 
 ### Description
 Find the total number of downloads for paying and non-paying users by date. Include only records where non-paying customers have more downloads than paying customers. The output should be sorted by earliest date first and contain 3 columns date, non-paying downloads, paying downloads.
+
 ### Solution
 Пример того как создавать сводную таблицу в sql. И подсчитывать значения с помощью sum + case.
 
 #### PostgreSQL
+
+```sql
 with pivot_table as (
     select
         date,
@@ -221,11 +228,7 @@ with pivot_table as (
 )
 
 select * from pivot_table where non_paying > paying
-
-
-
-#### Pandas
-
+```
 
 ## Acceptance Rate By Date
 
@@ -248,6 +251,7 @@ Assume that each friend request starts by a user sending (i.e., user_id_sender) 
 
 #### PostgreSQL
 
+```sql
 select
       a.date
     , count(b.user_id_receiver)/count(a.user_id_sender)::float as acceptance_rate
@@ -257,17 +261,20 @@ from
         and b.action = 'accepted'
 where a.action='sent'
 group by a.date
+```
 
 #### Pandas
 
+```python
 fb_friend_requests.merge(
     fb_friend_requests[fb_friend_requests['action'] == 'accepted'], 
     on='user_id_sender',
     suffixes=('_left', '_right'),
     how='left'
 ).loc[fb_friend_requests.action=='sent'].groupby('date_left').apply(lambda group: group[group['action_right'] == 'accepted'].shape[0]/group.shape[0]).reset_index()
+```
 
-## 
+## Task
 
 ### Link
 
@@ -281,6 +288,7 @@ Find the date with the highest total energy consumption from the Meta/Facebook d
 
 #### PostgreSQL
 
+```sql
 with full_table as (
     select * from fb_eu_energy
     union all
@@ -296,15 +304,12 @@ from full_table
 group by date
 order by sum_consumption desc
 limit 1
-
-
-#### Pandas
-
+```
 
 ## Highest Target Under Manager
 
 ### Link
-    https://platform.stratascratch.com/coding/9905-highest-target-under-manager?code_type=1
+https://platform.stratascratch.com/coding/9905-highest-target-under-manager?code_type=1
 
 ### Description
 Find the highest target achieved by the employee or employees who works under the manager id 13. Output the first name of the employee and target achieved. The solution should show the highest target achieved under manager_id=13 and which employee(s) achieved it.
@@ -316,7 +321,7 @@ Find the highest target achieved by the employee or employees who works under th
 
 #### PostgreSQL
 
-
+```sql
 -- solution №1
 -- with rank_table as (
 --     select 
@@ -360,7 +365,7 @@ where
 --     , *
 -- from rank_table
 -- order by manager_rank
-
+```
 
 
 ## Highest Salary In Department
@@ -378,6 +383,7 @@ Output the department name, employee's first name along with the corresponding s
 
 #### PostgreSQL
 
+```sql
 -- solution №1
 -- with max_salary_table as (
 --     select
@@ -412,11 +418,7 @@ where (department, salary) in (
     from employee
     group by department
 )
-
-
-#### Pandas
-
-
+```
 
 ## Reviews of Categories
 
@@ -434,6 +436,7 @@ Find the top business categories based on the total number of reviews. Output th
 
 #### PostgreSQL
 
+```sql
 -- solution №1
 select distinct
       category
@@ -452,10 +455,7 @@ from
     yelp_business
 group by category
 order by total_reviews desc
-
-
-#### Pandas
-
+```
 
 ## Find matching hosts and guests in a way that they are both of the same gender and nationality
 
@@ -472,6 +472,7 @@ Output the host id and the guest id of matched pair.
 
 #### PostgreSQL
 
+```sql
 -- solution №1
 select distinct
       h_tab.host_id
@@ -500,7 +501,7 @@ from
     airbnb_hosts h_tab join airbnb_guests g_tab on
             h_tab.nationality = g_tab.nationality
         and h_tab.gender = g_tab.gender
-
+```
 
 #### Pandas
 
@@ -518,6 +519,8 @@ Sort records by the apartments count in descending order.
 Почему при левом объединении (left join) появляется много неуникальных строк?
 
 #### PostgreSQL
+
+```sql
 -- solution №1 
 -- why do a lot of non-unique strings appear after left joining
 select
@@ -532,9 +535,7 @@ where
     
 group by h_tab.nationality
 order by n_apartment
-
-
-#### Pandas
+```
 
 ## Ranking Most Active Guests
 
@@ -553,6 +554,7 @@ Output the rank, guest id, and number of total messages they've sent. Order by t
 
 #### PostgreSQL
 
+```sql
 -- check if there are several rows for the same id_guest - True - need to sum up
 select
       id_guest
@@ -591,11 +593,7 @@ group by
     id_guest
 order by 
     sum_n_messages desc
-
-
-#### Pandas
-
-
+```
 
 ## Income By Title and Gender
 
@@ -612,6 +610,7 @@ Output the employee title, gender (i.e., sex), along with the average total comp
 
 #### PostgreSQL
 
+```sql
 with summed_bonus as (
     select
           worker_ref_id as id
@@ -636,28 +635,7 @@ group by
 order by
       e.employee_title 
     , e.sex
-
-
-#### Pandas
-
-
-
-## 
-
-### Link
-
-
-### Description
-
-
-### Solution
-
-
-#### PostgreSQL
-
-
-
-#### Pandas
+```
 
 ## Find all wineries which produce wines by possessing aromas of plum, cherry, rose, or hazelnut
 
@@ -672,6 +650,8 @@ Output unique winery values only.
 Как проверить есть ли в строке хотя бы одна подстрока из массива?
 
 #### PostgreSQL
+
+```sql
 select distinct
       winery
 from 
@@ -679,11 +659,7 @@ from
 where 
     lower(description) similar to '%(plum|cherry|rose|hazelnut)%'
     -- description ilike '%(plum|cherry|rose|hazelnut)%'
-
-
-#### Pandas
-
-
+```
 
 # Hard
 
@@ -705,7 +681,7 @@ The percentage change column will be populated from the 2nd month forward and ca
 
 #### PostgreSQL
 
-'''sql
+```sql
 SELECT
     TO_CHAR(created_at::date, 'YYYY-MM') as year_month,
     ROUND((SUM(value) - LAG(SUM(value), 1) OVER ())*100/LAG(SUM(value), 1) OVER (), 2) AS revenue_diff
@@ -716,9 +692,9 @@ GROUP BY year_month
 ORDER BY 
     year_month
     
-'''
+```
 
-'''sql
+```sql
 SELECT 
     to_char(created_at::date, 'YYYY-MM') as year_month,
     round((sum(value) - lag(sum(value),1) over (w)) / lag(sum(value),1) over (w)*100, 2) as revenue_diff
@@ -727,15 +703,18 @@ FROM
 GROUP BY 
     year_month
 WINDOW w as (order by to_char(created_at::date, 'YYYY-MM'))
-'''
+```
 
 #### Pandas
 
+```python
 import pandas as pd
 
 sf_transactions.head()
 res = sf_transactions.set_index('created_at')['value'].resample('M').sum().pct_change()*100
 res.round(2).to_period().reset_index()
+```
+
 
 ## 
 
@@ -749,6 +728,3 @@ res.round(2).to_period().reset_index()
 #### PostgreSQL
 
 #### Pandas
-
-
-
