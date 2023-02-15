@@ -26,6 +26,9 @@ git log --pretty=format:"%H [%cd]: %an - %s" --graph --date=format:%c
 ```
 
 ```console
+git restore <имя файла> - отменить изменения
+git restore . - отменить все изменения
+
 git add <имя файла> - добавить файл в репозиторий
 git add . - добавить все файлы в репозиторий
 git commit - закоммитить изменения
