@@ -1,27 +1,32 @@
 
-![plot](/img/Sections.PNG)
+![plot](data/img/Sections.PNG)
 
 
 Этот репозиторий представляет собой сборник заготовок, лайфхаков и практик, которые я использую в своей работе при анализе данных.
 
 
-## Структура 
+# Структура 
 
-### 1. Jupyter - в этом разделе собраны приемы работы в Jupyter notebooks.
-- [**Start.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Jupyter/Start.ipynb) - в этом ноутбуке содержится илюстрированная инструкция по установке и настройке рабочего окружения.
+## SQL
+
+
+## Python
+
+### 1. Jupyter - приемы работы в Jupyter notebooks.
+- [**Start.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Jupyter/Start.ipynb) - илюстрированная инструкция по установке и настройке рабочего окружения.
   - Как добавить python в список системных переменных?
   - Как создать рабочую среду Python?
   - Как установить Jupyter и другие пакеты?
   - Как запустить Jupyter, в том числе через ярлык на рабочем столе?
 
-- [**Jupyter_IPython.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Jupyter/Jupyter_IPython.ipynb) - здесь рассматриваются возможности оболочки IPython
+- [**Jupyter_IPython.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Jupyter/Jupyter_IPython.ipynb) - возможности оболочки IPython
   - Магические команды (как импортировать ноутбук?)
   - Доступ к документации
   - Автозаполнение
 
 - [**external_code_example.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Jupyter/external_code_example.ipynb) - код в этом ноудбуке импортируется в файл Jupyter_IPython.ipynb
 
-- [**Jupyter_settings**](https://github.com/Saxsafon/Analysis/blob/master/Jupyter/Jupyter_settings.ipynb) - содержит конструкции, позволяющие настроить ноутбук для более удобной работы. 
+- [**Jupyter_settings**](https://github.com/Saxsafon/Analysis/blob/master/Jupyter/Jupyter_settings.ipynb) - конструкции, позволяющие настроить ноутбук для более удобной работы. 
   - Как изменить количество символов, выводимых в ячейках датафреймов?
   - Как изменить ширину ячеек ноутбука?
   - Как скрыть предупреждения?
