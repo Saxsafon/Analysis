@@ -9,6 +9,45 @@
 
 ## SQL
 
+- [**Concepts.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/SQL/Concepts.ipynb) - описание базовых концепций языка PostgreSQL с примерами.
+
+- [**Groupby.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/SQL/Groupby.ipynb) - набор практик по группировке данных с помощью оператора group by.
+
+- [**Pivot_Tables.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/SQL/Pivot_Tables.ipynb) - способы формирования сводных таблиц с помощью PostgreSQL.
+
+- [**Joins.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/SQL/Joins.ipynb) - описание различных способов объедиинения таблиц, и практики использования оператора join.
+
+- [**Union.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/SQL/Union.ipynb) - практики использования операторов Union и Union All
+    - Конкатенация таблиц
+    - Посчитать количество связей в обоих направлениях
+    
+- [**Window_functions.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/SQL/Window_functions.ipynb) - реализация оконных функций в PostgreSQL, а также множество способов их применения.
+    - Посчитать процентное изменение
+    - Посчитать отклонение от среднего
+    - Отранжировать значения
+    - Отранжировать агрегаты
+    - Получить процентный ранг значения (в контексте групп)
+    - Выделить первое, последнее или n-ное значение
+    - Вывести предыдущую, текущую и следующую строки в контексте группы
+    - Посчитать скользящее среднее
+
+- [**Rounds.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/SQL/Rounds.ipynb) -  варианты округления значений с примерами и описанием различных нюансов (Work in Progress).
+
+- [**Strings_processing.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/SQL/Strings_processing.ipynb) - практики работы со строками с помощью PostgreSQL.
+    - Выделить подстроку
+    - Определе определить вхождение строк
+    - Конкатенация нескольких строковых колонок в одну
+    - Конкатенация сгруппированных значений в строку
+    - Разделение строки по указанному символу
+    
+- [**Datetime_processing.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/SQL/Datetime_porcessing.ipynb) - набор практик работы с типом данных datetime.
+
+- [**Math_operations**](https://github.com/Saxsafon/Analysis/blob/master/SQL/Math_operations.ipynb) - готовые конструкции для выполнения комплексных математических операций с помощью PostgreSQL.
+    - Посчитать среднеквадратичесую ошибку прогноза
+    - Посчитать растояние между двумя точками
+    
+- [**Interview_tasks.ipynb**](https://github.com/Saxsafon/Analysis/tree/master/SQL) - разбор реальных задач, которые попадались мне на SQL-собеседованиях.
+
 
 ## Python
 
@@ -65,7 +104,7 @@
 - [**Pickle.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Storing/Pickle.ipynb) - содержит примеры сохранения объектов python в .pkl-файлах с помощью пакета Pickle
 
 ### 4. Processing
-- [**Groupby.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Processing/Groupby.ipynb) - в ноутбуке собраны полезные практики использования метода .groupby() 
+- [**Groupby.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Processing/Groupby.ipynb) - набор практик использования метода .groupby() 
   - .groupby() + .apply()
   - .groupby() + .agg()
   - .groupby() + .filter()
