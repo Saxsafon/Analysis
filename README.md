@@ -48,6 +48,23 @@
     
 - [**Interview_tasks.ipynb**](https://github.com/Saxsafon/Analysis/tree/master/SQL) - разбор реальных задач, которые попадались мне на SQL-собеседованиях.
 
+### PostgreSQL - взаимодействие с базой из jupyter-ноутбука
+- [**PostgreSQL.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/SQL/PostgreSQL/PostgreSQL.ipynb) - в ноутбуке реализован класс, с помощью которого можно обращаться к БД из jupyter-ноутбука.
+    - Посмотреть схему таблиц в БД
+    - Создать таблицу
+    - Добавить запись в таблицу
+    - Получить данные из таблицы
+    - Изменить таблицу
+    - Удалить записи из таблицы
+    - Удалить таблицу
+
+- [**Update.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/SQL/PostgreSQL/Update.ipynb) - приведены кейсы по обновлению данных в БД.
+    - Упаковка значений колонко в json-формат
+    - Заменить конкретные значения колонки на строковый 'null'
+    - Добавить новую колонку
+    - Переименовать колонку
+    - Удалить колонку
+
 
 ## Python
 
