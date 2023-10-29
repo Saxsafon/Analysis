@@ -169,23 +169,32 @@
   - Как посчитать количество записей за временной период? _(здесь используются pivot_table)_
 
 - [**Lifehacks.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/Lifehacks.ipynb) - здесь хранятся дополнительные небольшие лайфхаки. А также практики требующие разбора.
-  - Как добавить несколько колонок с помощью одной функции?
-  - Как заменить или сбросить header датафрейма?
-  - Как вывести датафрейм в виде строки, чтобы его было удобно читать?
+    - Распаковка и упаковка вложенных структур данных 
+    - Как добавить несколько колонок с помощью одной функции?
+    - Как заменить или сбросить header датафрейма?
+    - Как вывести датафрейм в виде строки, чтобы его было удобно читать?
   
-- [**Compare.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/Compare.ipynb)
+- [**Compare.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/Compare.ipynb) - практики сравнения таблиц между собоой, а также визуализации различий.
 
-- [**EDA.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/EDA.ipynb)
+- [**EDA.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/EDA.ipynb) - Exploratory Data Analysis, разведовательный анализ данных. Содержит практики ознакомления и обработки нового датасета.
+    - Посмотр таблиц и типов колонок
+    - Обработка пустных значений и дубликатов
+    - Получение базовых статистик по колонкам (минимальное, максимальное, медианное и среднее значение)
+    - Обзор пакетов для EDA
 
-- [**Joins.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/Joins.ipynb)
+- [**Joins.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/Joins.ipynb) - работа с методами merge и join для объединения таблиц.
+    - Перебор комбинаций с помощью join-ов
+    - Заполнение значений по умолчанию
 
-- [**Multiindex.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/Multiindex.ipynb)
+- [**Multiindex.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/Multiindex.ipynb) - практики работы с многоуровневыми индексами (Work in Progress)
+    - Преобразовать составные названия колонок в мультииндексную структуру
 
-- [**ML.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/ML.ipynb)
+- [**ML.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/ML.ipynb) - применение методов машинного обучения в анализе данных (Work in Progress)
+    - Использование дерева решений для разбиения значений на кластеры
 
-- [**Packing.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/Packing.ipynb)
-
-- [**Window_functions.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/Window_functions.ipynb)
+- [**Window_functions.ipynb**](https://github.com/Saxsafon/Analysis/blob/master/Python/Processing/Window_functions.ipynb) - варианты реализации оконных функций в Pandas
+    - .groupby + .transform
+    - .groupby + .merge
   
 ### Visualization
 
