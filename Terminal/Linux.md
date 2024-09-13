@@ -68,7 +68,14 @@ while ! [command]; do sleep 1; done - выполнять команду до п�
 ## Pip
 
 ```console
+pip install --upgrade pip - обновить pip
+
 pip list | grep <имя пакета> - проверить версию пакета
+
+pip install <имя пакета> --upgrade - обновить пакет
+pip --disable-pip-version-check list --outdated --format=json | python -c "import json, sys; print('\n'.join([x['name'] for x in json.load(sys.stdin)]))" | xargs -n1 pip install -U - обновить все пакетыс п
+pip uninstall <имя пакета> - удалить пакет
+
 ```
 
 ## Jupyter Notebook
